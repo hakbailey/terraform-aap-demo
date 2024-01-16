@@ -1,0 +1,6 @@
+collections:
+  - name: amazon.aws
+  - name: cloud.terraform
+    source: https://github.com/hakbailey/cloud.terraform.git
+    type: git
+    version: state-inventory-update
