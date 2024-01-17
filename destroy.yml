@@ -1,12 +1,12 @@
 ---
-- name: Deploy resources via Terraform
+- name: Destroy Terraform resources
   hosts: localhost
+
   tasks:
-    - name: Terraform apply
+    - name: Terraform destroy
       cloud.terraform.terraform:
         project_path: terraform/
-        state: present
-        force_init: true
+        state: absent
         backend_config_files:
           - "{{ lookup('env', 'TF_BACKEND_CONFIG_FILE') }}"
       register: result

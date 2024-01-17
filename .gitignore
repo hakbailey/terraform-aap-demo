@@ -1,3 +1,4 @@
 execution-environment/context
-terraform-project/.terraform
+.terraform
+.terraform.*
 .DS_Store
