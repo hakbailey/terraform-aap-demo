@@ -27,7 +27,7 @@ resource "aws_instance" "created-by-terraform-4" {
   ami           = "ami-0005e0cfe09cc9050"
   instance_type = "t2.micro"
   tags = {
-    Name = "created-by-terraform-2"
+    Name = "created-by-terraform-4"
   }
 }
 
@@ -52,10 +52,10 @@ resource "aap_host" "instance-4" {
   variables = jsonencode(aws_instance.created-by-terraform-4)
 }
 
-output "instance-1" {
+output "instance-3" {
   value = aap_host.instance-3
 }
 
-output "instance-2" {
+output "instance-4" {
   value = aap_host.instance-4
 }
