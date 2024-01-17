@@ -15,15 +15,15 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_instance" "created-by-terraform-1" {
+resource "aws_instance" "created-by-terraform-3" {
   ami           = "ami-0005e0cfe09cc9050"
   instance_type = "t2.micro"
   tags = {
-    Name = "created-by-terraform-1"
+    Name = "created-by-terraform-3"
   }
 }
 
-resource "aws_instance" "created-by-terraform-2" {
+resource "aws_instance" "created-by-terraform-4" {
   ami           = "ami-0005e0cfe09cc9050"
   instance_type = "t2.micro"
   tags = {
@@ -38,24 +38,24 @@ provider "aap" {
   insecure_skip_verify = true
 }
 
-resource "aap_host" "instance-1" {
+resource "aap_host" "instance-3" {
   inventory_id = 2
-  name = aws_instance.created-by-terraform-1.id
+  name = "created-by-terraform-3"
   description = "An EC2 instance created by Terraform"
-  variables = jsonencode(aws_instance.created-by-terraform-1)
+  variables = jsonencode(aws_instance.created-by-terraform-3)
 }
 
-resource "aap_host" "instance-2" {
+resource "aap_host" "instance-4" {
   inventory_id = 2
-  name = aws_instance.created-by-terraform-2.id
+  name = "created-by-terraform-4"
   description = "Another EC2 instance created by Terraform"
-  variables = jsonencode(aws_instance.created-by-terraform-2)
+  variables = jsonencode(aws_instance.created-by-terraform-4)
 }
 
 output "instance-1" {
-  value = aap_host.instance-1
+  value = aap_host.instance-3
 }
 
 output "instance-2" {
-  value = aap_host.instance-2
+  value = aap_host.instance-4
 }
