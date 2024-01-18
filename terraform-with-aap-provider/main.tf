@@ -57,14 +57,14 @@ provider "aap" {
 
 resource "aap_host" "tf-demo-aws-ec2-instance-2" {
   inventory_id = 2
-  name = "f-demo-aws-ec2-instance-2"
+  name = "aws_instance_tf-demo-aws-ec2-instance-2"
   description = "An EC2 instance created by Terraform"
   variables = jsonencode(aws_instance.tf-demo-aws-ec2-instance-2)
 }
 
 resource "aap_host" "tf-demo-gcp-instance-2" {
   inventory_id = 2
-  name = "tf-demo-gcp-instance-2"
+  name = "google_compute_instance_tf-demo-gcp-instance-2"
   description = "A GCE instance created by Terraform"
   variables = jsonencode(google_compute_instance.tf-demo-gcp-instance-2)
 }
