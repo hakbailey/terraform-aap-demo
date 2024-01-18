@@ -4,3 +4,4 @@ collections:
     source: https://github.com/hakbailey/cloud.terraform.git
     type: git
     version: state-inventory-update
+  - name: google.cloud
