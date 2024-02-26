@@ -1,7 +1,7 @@
 collections:
   - name: amazon.aws
   - name: cloud.terraform
-    source: https://github.com/hakbailey/cloud.terraform.git
+    source: https://github.com/ansible-collections/cloud.terraform.git
     type: git
-    version: state-inventory-update
+    version: stable-statefile-inventory
   - name: google.cloud
